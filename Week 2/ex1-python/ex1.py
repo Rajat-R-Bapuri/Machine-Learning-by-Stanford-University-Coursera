@@ -47,7 +47,12 @@ print('\n', theta[0], '\n', theta[1], '\n')
 print('Expected theta values (approx)\n')
 print(' -3.6303\n  1.1664\n\n')
 
-plt.plot(X, designMatrix.dot(theta))
+plt.plot(X, y, 'ro', marker='x', ms=5, label='Data')
+plt.plot(X, designMatrix.dot(theta), label='Linear Regression')
+plt.xlabel('Population of city in 10,000s')
+plt.ylabel('Profit in $10,000s')
+plt.legend()
+plt.show()
 
 predict1 = np.sum(np.array([1, 3.5]).dot(theta))
 print('For population = 35,000, we predict a profit of \n', predict1*10000)
